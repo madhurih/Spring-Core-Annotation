@@ -1,19 +1,26 @@
 package com.stackroute.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Movie
 {
     private int id;
     private String movieName;
+    @Autowired
     private Actor actor;
+
+    public Movie() {
+    }
 
     public Movie(Actor actor) {
         this.actor = actor;
     }
 
-    public Movie(int id, String movieName, Actor actor) {
+    public Movie(int id, String movieName) {
         this.id = id;
         this.movieName = movieName;
-        this.actor = actor;
     }
 
 //    public Actor getActor() {
