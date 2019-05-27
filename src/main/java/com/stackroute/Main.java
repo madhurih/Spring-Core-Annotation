@@ -26,6 +26,7 @@ public class Main
 //        System.out.println("Actor Name: "+bean.getActor().getName());
 //        System.out.println("Actor Age: "+bean.getActor().getAge());
 //        System.out.println("Actor Gender: "+bean.getActor().getGender());
+        System.out.println("");
         System.out.println(bean);
     }
 }
