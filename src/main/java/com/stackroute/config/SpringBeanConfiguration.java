@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Scope;
 public class SpringBeanConfiguration
 {
     //configure any bean here
-    @Bean(name = "Movie.class")
+    @Bean(name = {"Movie.class","Movie1.class"})
     @Scope("prototype")
     public Movie getMovie()
     {
@@ -28,8 +28,8 @@ public class SpringBeanConfiguration
         return movie;
     }
 
-    @Bean(name = "Move.class")
-    public Movie getMove()
+    @Bean(name = "Movie2.class")
+    public Movie getMovie1()
     {
 //        Actor actor=new Actor();
 //        actor.setName("varun");
@@ -40,8 +40,8 @@ public class SpringBeanConfiguration
 //        movie.setMovieName("Student of the year");
 //        movie.setId(02);
 //        movie.setActor(actor);
-        Actor actor = new Actor("Madhuri", "F", 30);
-        Movie movie = new Movie(1, "kalank", actor);
+        Actor actor = new Actor("Varun", "M", 25);
+        Movie movie = new Movie(2, "Student of the year", actor);
         return movie;
     }
 }
