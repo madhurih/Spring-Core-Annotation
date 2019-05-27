@@ -1,6 +1,7 @@
 package com.stackroute;
 
 import com.stackroute.config.AppConfig;
+import com.stackroute.demo.BeanLifecycleDemoBean;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.AnnotatedBeanDefinition;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.annotation.AnnotatedBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
@@ -28,5 +30,8 @@ public class Main
 //        System.out.println("Actor Gender: "+bean.getActor().getGender());
         System.out.println("");
         System.out.println(bean);
+
+        BeanLifecycleDemoBean beanLifecycleDemoBean = (BeanLifecycleDemoBean) ctx.getBean("BeanLifecycleDemoBean");
+        ctx.destroy();
     }
 }
